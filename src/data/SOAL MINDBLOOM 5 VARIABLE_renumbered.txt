@@ -1,0 +1,1020 @@
+ASPEK SOSIAL
+
+[
+  {
+    "id": 1,
+    "text": "Saya merasa nyaman berbicara dengan orang lain.",
+    "dimension": "Sosial",
+    "weight": 0.72,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 2,
+    "text": "Saya merasa diterima di lingkungan sosial saya.",
+    "dimension": "Sosial",
+    "weight": 0.84,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 3,
+    "text": "Saya merasa kesepian meskipun berada di sekitar banyak orang.",
+    "dimension": "Sosial",
+    "weight": 0.96,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 4,
+    "text": "Saya menghindari interaksi sosial.",
+    "dimension": "Sosial",
+    "weight": 0.94,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 5,
+    "text": "Saya memiliki seseorang untuk berbagi cerita.",
+    "dimension": "Sosial",
+    "weight": 0.82,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 6,
+    "text": "Saya merasa didukung oleh keluarga.",
+    "dimension": "Sosial",
+    "weight": 0.87,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 7,
+    "text": "Saya merasa didukung oleh teman.",
+    "dimension": "Sosial",
+    "weight": 0.83,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 8,
+    "text": "Saya merasa sulit membangun hubungan sosial.",
+    "dimension": "Sosial",
+    "weight": 0.90,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 9,
+    "text": "Saya takut dinilai negatif oleh orang lain.",
+    "dimension": "Sosial",
+    "weight": 0.91,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 10,
+    "text": "Saya merasa dihargai dalam lingkungan sosial.",
+    "dimension": "Sosial",
+    "weight": 0.78,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 11,
+    "text": "Saya sering menarik diri dari lingkungan sosial.",
+    "dimension": "Sosial",
+    "weight": 0.95,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 12,
+    "text": "Saya merasa aman secara emosional saat bersama orang lain.",
+    "dimension": "Sosial",
+    "weight": 0.80,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 13,
+    "text": "Saya mudah percaya kepada orang lain.",
+    "dimension": "Sosial",
+    "weight": 0.68,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 14,
+    "text": "Saya merasa hubungan sosial saya sehat.",
+    "dimension": "Sosial",
+    "weight": 0.85,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 15,
+    "text": "Saya merasa tidak memiliki tempat untuk bercerita.",
+    "dimension": "Sosial",
+    "weight": 0.94,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 16,
+    "text": "Saya merasa nyaman berada dalam kelompok.",
+    "dimension": "Sosial",
+    "weight": 0.74,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 17,
+    "text": "Saya sering merasa diabaikan oleh lingkungan.",
+    "dimension": "Sosial",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 18,
+    "text": "Saya merasa hubungan sosial memengaruhi suasana hati saya.",
+    "dimension": "Sosial",
+    "weight": 0.79,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 19,
+    "text": "Saya merasa mudah bekerja sama dengan orang lain.",
+    "dimension": "Sosial",
+    "weight": 0.73,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 20,
+    "text": "Saya merasa memiliki lingkungan sosial yang positif.",
+    "dimension": "Sosial",
+    "weight": 0.86,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  }
+]
+
+ASPEK EMOSI
+[
+  {
+    "id": 21,
+    "text": "Saya mudah tersinggung.",
+    "dimension": "Emosi",
+    "weight": 0.79,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 22,
+    "text": "Saya sulit mengendalikan emosi ketika marah.",
+    "dimension": "Emosi",
+    "weight": 0.95,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 23,
+    "text": "Saya merasa sedih tanpa alasan jelas.",
+    "dimension": "Emosi",
+    "weight": 0.97,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 24,
+    "text": "Saya mudah merasa kecewa.",
+    "dimension": "Emosi",
+    "weight": 0.74,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 25,
+    "text": "Saya mampu menenangkan diri ketika stres.",
+    "dimension": "Emosi",
+    "weight": 0.87,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 26,
+    "text": "Saya merasa emosi saya tidak stabil.",
+    "dimension": "Emosi",
+    "weight": 0.96,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 27,
+    "text": "Saya mudah menangis.",
+    "dimension": "Emosi",
+    "weight": 0.72,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 28,
+    "text": "Saya merasa frustrasi terhadap hal kecil.",
+    "dimension": "Emosi",
+    "weight": 0.84,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 29,
+    "text": "Saya merasa emosional sepanjang hari.",
+    "dimension": "Emosi",
+    "weight": 0.91,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 30,
+    "text": "Saya mudah panik ketika menghadapi masalah.",
+    "dimension": "Emosi",
+    "weight": 0.90,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 31,
+    "text": "Saya merasa sulit mengendalikan pikiran negatif.",
+    "dimension": "Emosi",
+    "weight": 0.96,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 32,
+    "text": "Saya merasa tenang menghadapi tekanan.",
+    "dimension": "Emosi",
+    "weight": 0.83,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 33,
+    "text": "Saya merasa suasana hati saya cepat berubah.",
+    "dimension": "Emosi",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 34,
+    "text": "Saya mudah merasa bersalah.",
+    "dimension": "Emosi",
+    "weight": 0.81,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 35,
+    "text": "Saya merasa kehilangan semangat.",
+    "dimension": "Emosi",
+    "weight": 0.94,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 36,
+    "text": "Saya merasa bahagia menjalani aktivitas sehari-hari.",
+    "dimension": "Emosi",
+    "weight": 0.85,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 37,
+    "text": "Saya merasa emosional ketika menghadapi kritik.",
+    "dimension": "Emosi",
+    "weight": 0.82,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 38,
+    "text": "Saya mudah merasa putus asa.",
+    "dimension": "Emosi",
+    "weight": 0.97,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 39,
+    "text": "Saya merasa mampu memahami emosi diri sendiri.",
+    "dimension": "Emosi",
+    "weight": 0.78,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 40,
+    "text": "Saya merasa emosi memengaruhi aktivitas saya.",
+    "dimension": "Emosi",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  }
+]
+
+ASPEK KECEMASAN
+[
+  {
+    "id": 41,
+    "text": "Saya merasa cemas berlebihan.",
+    "dimension": "Anxiety",
+    "weight": 0.98,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 42,
+    "text": "Saya sulit berhenti khawatir.",
+    "dimension": "Anxiety",
+    "weight": 0.96,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 43,
+    "text": "Saya merasa takut tanpa alasan jelas.",
+    "dimension": "Anxiety",
+    "weight": 0.94,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 44,
+    "text": "Saya sering overthinking.",
+    "dimension": "Anxiety",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 45,
+    "text": "Saya merasa jantung berdebar saat cemas.",
+    "dimension": "Anxiety",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 46,
+    "text": "Saya sulit merasa rileks.",
+    "dimension": "Anxiety",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 47,
+    "text": "Saya merasa tegang hampir setiap hari.",
+    "dimension": "Anxiety",
+    "weight": 0.90,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 48,
+    "text": "Saya takut sesuatu buruk akan terjadi.",
+    "dimension": "Anxiety",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 49,
+    "text": "Saya merasa gugup dalam situasi sosial.",
+    "dimension": "Anxiety",
+    "weight": 0.84,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 50,
+    "text": "Saya merasa sulit berkonsentrasi karena cemas.",
+    "dimension": "Anxiety",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 51,
+    "text": "Saya merasa tangan atau tubuh gemetar ketika stres.",
+    "dimension": "Anxiety",
+    "weight": 0.86,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 52,
+    "text": "Saya merasa panik ketika menghadapi tekanan.",
+    "dimension": "Anxiety",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 53,
+    "text": "Saya merasa sulit mengontrol rasa khawatir.",
+    "dimension": "Anxiety",
+    "weight": 0.97,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 54,
+    "text": "Saya merasa gelisah sepanjang hari.",
+    "dimension": "Anxiety",
+    "weight": 0.91,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 55,
+    "text": "Saya merasa takut membuat kesalahan.",
+    "dimension": "Anxiety",
+    "weight": 0.82,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 56,
+    "text": "Saya merasa sulit tidur karena pikiran berlebihan.",
+    "dimension": "Anxiety",
+    "weight": 0.94,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 57,
+    "text": "Saya merasa khawatir terhadap masa depan.",
+    "dimension": "Anxiety",
+    "weight": 0.89,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 58,
+    "text": "Saya merasa cemas saat menghadapi banyak tugas.",
+    "dimension": "Anxiety",
+    "weight": 0.87,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 59,
+    "text": "Saya merasa mudah lelah karena kecemasan.",
+    "dimension": "Anxiety",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 60,
+    "text": "Saya merasa kecemasan mengganggu aktivitas sehari-hari.",
+    "dimension": "Anxiety",
+    "weight": 0.98,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  }
+]
+
+ASPEK POLA TIDUR
+[
+  {
+    "id": 61,
+    "text": "Saya sulit tidur di malam hari.",
+    "dimension": "Tidur",
+    "weight": 0.96,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 62,
+    "text": "Saya sering terbangun saat tidur.",
+    "dimension": "Tidur",
+    "weight": 0.92,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 63,
+    "text": "Saya merasa tidur saya tidak nyenyak.",
+    "dimension": "Tidur",
+    "weight": 0.95,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 64,
+    "text": "Saya membutuhkan waktu lama untuk tertidur.",
+    "dimension": "Tidur",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 65,
+    "text": "Saya merasa lelah setelah bangun tidur.",
+    "dimension": "Tidur",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 66,
+    "text": "Saya tidur kurang dari 6 jam per hari.",
+    "dimension": "Tidur",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 67,
+    "text": "Saya mengalami mimpi buruk.",
+    "dimension": "Tidur",
+    "weight": 0.76,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 68,
+    "text": "Saya merasa mengantuk di siang hari.",
+    "dimension": "Tidur",
+    "weight": 0.84,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 69,
+    "text": "Saya tidur tidak teratur.",
+    "dimension": "Tidur",
+    "weight": 0.87,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 70,
+    "text": "Saya menggunakan gadget sebelum tidur.",
+    "dimension": "Tidur",
+    "weight": 0.68,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 71,
+    "text": "Saya merasa kualitas tidur saya buruk.",
+    "dimension": "Tidur",
+    "weight": 0.95,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 72,
+    "text": "Saya merasa sulit bangun pagi.",
+    "dimension": "Tidur",
+    "weight": 0.80,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 73,
+    "text": "Saya merasa tidur saya terganggu oleh pikiran.",
+    "dimension": "Tidur",
+    "weight": 0.94,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 74,
+    "text": "Saya merasa kurang istirahat meskipun sudah tidur.",
+    "dimension": "Tidur",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 75,
+    "text": "Saya sering tidur terlalu larut.",
+    "dimension": "Tidur",
+    "weight": 0.82,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 76,
+    "text": "Saya merasa tubuh tidak segar saat bangun.",
+    "dimension": "Tidur",
+    "weight": 0.89,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 77,
+    "text": "Saya mengalami gangguan tidur ketika stres.",
+    "dimension": "Tidur",
+    "weight": 0.90,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 78,
+    "text": "Saya tertidur di waktu yang tidak seharusnya.",
+    "dimension": "Tidur",
+    "weight": 0.78,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 79,
+    "text": "Saya merasa pola tidur memengaruhi emosi saya.",
+    "dimension": "Tidur",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 80,
+    "text": "Saya merasa tidur saya cukup setiap hari.",
+    "dimension": "Tidur",
+    "weight": 0.86,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  }
+]
+
+ASPEK ENERGI
+[
+  {
+    "id": 81,
+    "text": "Saya merasa cepat lelah.",
+    "dimension": "Energi",
+    "weight": 0.90,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 82,
+    "text": "Saya merasa tidak berenergi menjalani aktivitas.",
+    "dimension": "Energi",
+    "weight": 0.96,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 83,
+    "text": "Saya merasa sulit fokus karena kelelahan.",
+    "dimension": "Energi",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 84,
+    "text": "Saya merasa tubuh terasa berat sepanjang hari.",
+    "dimension": "Energi",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 85,
+    "text": "Saya kehilangan motivasi melakukan aktivitas.",
+    "dimension": "Energi",
+    "weight": 0.97,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 86,
+    "text": "Saya merasa mudah mengantuk saat siang hari.",
+    "dimension": "Energi",
+    "weight": 0.79,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 87,
+    "text": "Saya merasa energi saya cepat habis.",
+    "dimension": "Energi",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 88,
+    "text": "Saya merasa lelah meskipun tidak banyak aktivitas.",
+    "dimension": "Energi",
+    "weight": 0.94,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 89,
+    "text": "Saya merasa produktivitas saya menurun.",
+    "dimension": "Energi",
+    "weight": 0.90,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 90,
+    "text": "Saya merasa sulit memulai aktivitas.",
+    "dimension": "Energi",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 91,
+    "text": "Saya merasa semangat saya berkurang.",
+    "dimension": "Energi",
+    "weight": 0.93,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 92,
+    "text": "Saya merasa kelelahan emosional.",
+    "dimension": "Energi",
+    "weight": 0.96,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 93,
+    "text": "Saya merasa burnout.",
+    "dimension": "Energi",
+    "weight": 0.98,
+    "severityTarget": ["berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": true
+  },
+  {
+    "id": 94,
+    "text": "Saya merasa aktivitas sehari-hari menguras energi.",
+    "dimension": "Energi",
+    "weight": 0.92,
+    "severityTarget": ["sedang", "berat"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 95,
+    "text": "Saya merasa tidak memiliki tenaga untuk bersosialisasi.",
+    "dimension": "Energi",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 96,
+    "text": "Saya merasa tubuh saya sering lemas.",
+    "dimension": "Energi",
+    "weight": 0.88,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 97,
+    "text": "Saya merasa membutuhkan istirahat lebih banyak.",
+    "dimension": "Energi",
+    "weight": 0.84,
+    "severityTarget": ["ringan", "sedang"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 98,
+    "text": "Saya merasa sulit mempertahankan konsentrasi.",
+    "dimension": "Energi",
+    "weight": 0.91,
+    "severityTarget": ["sedang"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  },
+  {
+    "id": 99,
+    "text": "Saya merasa energi saya stabil setiap hari.",
+    "dimension": "Energi",
+    "weight": 0.82,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": false,
+    "isCritical": false
+  },
+  {
+    "id": 100,
+    "text": "Saya merasa siap menjalani aktivitas harian.",
+    "dimension": "Energi",
+    "weight": 0.85,
+    "severityTarget": ["ringan"],
+    "tags": [],
+    "isCore": true,
+    "isCritical": false
+  }
+]
