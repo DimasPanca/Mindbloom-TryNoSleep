@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import {
-  CalendarDays, ClipboardList, History, Home, Info, Leaf, LifeBuoy, LogOut, Menu, Moon,
+  CalendarDays, ClipboardList, History, Home, Info, LifeBuoy, LogOut, Menu, Moon,
   Phone, Sun, User, X,
 } from 'lucide-react'
 import { useAuth } from '@/contexts/AuthContext'
 import { useProfile } from '@/contexts/ProfileContext'
 import { cn } from '@/lib/utils'
 import { spring } from '@/lib/motion'
+import MindbloomLogo from '@/components/MindbloomLogo'
 
 interface NavItem {
   to: string
@@ -40,7 +41,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   async function handleSignOut() {
     await signOut()
-    navigate('/login', { replace: true })
+    navigate('/', { replace: true })
   }
 
   const initials = (profile?.name ?? 'M')
@@ -56,10 +57,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <aside className="hidden lg:flex fixed inset-y-0 left-0 w-72 bg-surface/90 dark:bg-[#0C211C]/95 border-r border-border-light/80 dark:border-border-dark/80 backdrop-blur-xl flex-col z-40 shadow-[16px_0_50px_rgba(23,62,56,0.06)] dark:shadow-[16px_0_50px_rgba(0,0,0,0.2)]">
         <div className="px-5 pt-6 pb-5 flex items-center justify-between">
           <Link to="/dashboard" className="group flex items-center gap-3">
-            <div className="relative grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
-              <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100" />
-              <Leaf size={25} strokeWidth={1.8} className="relative" />
-            </div>
+            <MindbloomLogo size={44} />
             <div>
               <span className="block text-xl font-black tracking-tight text-text-dark dark:text-white">MindBloom</span>
               <span className="block text-[11px] font-bold text-text-muted dark:text-[#9EB4AC]">Mental wellness space</span>
@@ -248,9 +246,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header className="lg:hidden sticky top-0 z-30 h-16 border-b border-border-light/80 bg-surface/90 px-4 backdrop-blur-xl dark:border-border-dark/80 dark:bg-dark-card/90">
         <div className="flex h-full items-center justify-between">
           <Link to="/dashboard" className="flex items-center gap-2.5">
-            <div className="grid h-9 w-9 place-items-center rounded-xl bg-primary/10 text-primary">
-              <Leaf size={22} strokeWidth={1.8} />
-            </div>
+            <MindbloomLogo size={36} noMotion />
             <span className="text-lg font-black text-text-dark dark:text-white">MindBloom</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -293,7 +289,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             >
               <div className="flex items-center justify-between border-b border-border-light px-5 py-4 dark:border-border-dark">
                 <div className="flex items-center gap-2.5">
-                  <Leaf size={22} strokeWidth={1.8} className="text-primary" />
+                  <MindbloomLogo size={32} noMotion />
                   <span className="text-lg font-black text-text-dark dark:text-white">MindBloom</span>
                 </div>
                 <div className="flex items-center gap-1">

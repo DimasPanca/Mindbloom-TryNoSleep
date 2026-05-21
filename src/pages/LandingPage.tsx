@@ -5,11 +5,12 @@ import {
   type MotionValue,
 } from 'framer-motion'
 import {
-  ArrowDownToLine, ArrowRight, BarChart3, Brain, ChevronRight, ClipboardList,
-  Cpu, Flame, HandHeart, HeartPulse, Leaf, Lock, MapPin, Phone, PieChart,
-  Play, ShieldCheck, Sparkles, Timer, Users,
+  AlertTriangle, ArrowDownToLine, ArrowRight, Brain, ChevronRight, ClipboardList,
+  Cpu, ExternalLink, Flame, HandHeart, HeartPulse, Lock, MapPin, Phone, PieChart,
+  Play, ShieldCheck, Sparkles,
 } from 'lucide-react'
 import OrganicBackground from '@/components/OrganicBackground'
+import MindbloomLogo from '@/components/MindbloomLogo'
 import AnimatedNumber from '@/components/AnimatedNumber'
 import { cn } from '@/lib/utils'
 
@@ -55,10 +56,7 @@ function Header({ scrolled, onNavClick }: { scrolled: boolean; onNavClick: (id: 
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-primary/30 blur-md rounded-full group-hover:bg-primary/50 transition-colors" />
-            <Leaf size={24} strokeWidth={1.75} className="relative text-primary" />
-          </div>
+          <MindbloomLogo size={36} />
           <span className="text-lg font-black tracking-tight">MindBloom</span>
         </Link>
 
@@ -160,7 +158,7 @@ function Hero({ onLearnClick }: { onLearnClick: () => void }) {
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             className="text-base md:text-lg text-text-muted dark:text-[#9FB8B4] leading-relaxed max-w-xl"
           >
-            MindBloom membantumu memahami kesehatan mental dengan analisis <span className="font-bold text-text-dark dark:text-white">Fuzzy AI</span> yang akurat, lalu membimbingmu menuju intervensi yang tepat.
+            MindBloom membantumu memahami kesehatan mental dengan analisis <span className="font-bold text-text-dark dark:text-white">Fuzzy Tahani AI</span> yang akurat, lalu membimbingmu menuju intervensi yang tepat.
           </motion.p>
 
           <motion.div
@@ -195,7 +193,7 @@ function Hero({ onLearnClick }: { onLearnClick: () => void }) {
           >
             {[
               { Icon: Lock,       label: 'Data Privat'    },
-              { Icon: Brain,      label: 'Fuzzy AI'       },
+              { Icon: Brain,      label: 'Fuzzy Tahani AI'       },
               { Icon: HeartPulse, label: 'Berbasis Ilmu'  },
             ].map(({ Icon, label }) => (
               <div key={label} className="flex items-center gap-1.5">
@@ -212,7 +210,7 @@ function Hero({ onLearnClick }: { onLearnClick: () => void }) {
           transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           onMouseMove={handleMove}
           onMouseLeave={handleLeave}
-          className="relative h-[420px] md:h-[460px]"
+          className="relative h-[500px] md:h-[560px] px-6 sm:px-10 md:px-14"
         >
           <HeroIllustration sx={sx} sy={sy} />
         </motion.div>
@@ -228,30 +226,59 @@ function HeroIllustration({ sx, sy }: { sx: MotionValue<number>; sy: MotionValue
     { label: 'Energi',          value: 75, color: '#D9A23B' },
   ]
 
+  const cardRotateY = useTransform(sx, [-20, 20], [-4, 4])
+  const cardRotateX = useTransform(sy, [-20, 20], [3, -3])
+  const badgeShiftX = useTransform(sx, v => -v * 0.5)
+  const badgeShiftY = useTransform(sy, v => -v * 0.5)
+
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1200 }}>
       <motion.div
         style={{ x: sx, y: sy }}
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative w-full max-w-sm"
+        className="relative w-full max-w-[420px]"
       >
-        <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-green/20 to-purple/20 rounded-[2rem] blur-2xl" />
+        <motion.div
+          aria-hidden="true"
+          className="absolute -inset-10 bg-gradient-to-br from-primary/35 via-green/20 to-purple/25 rounded-[3rem] blur-3xl"
+          animate={{ opacity: [0.55, 0.95, 0.55], scale: [1, 1.05, 1] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        />
 
-        <div className="relative bg-white dark:bg-dark-card border border-border-light/70 dark:border-border-dark/70 rounded-3xl shadow-2xl p-5 space-y-4">
+        <motion.div
+          aria-hidden="true"
+          className="absolute -inset-2 pointer-events-none"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+        >
+          <span className="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary/70 shadow-[0_0_10px_rgba(42,175,160,0.8)]" />
+          <span className="absolute bottom-4 right-6 w-1 h-1 rounded-full bg-green/70 shadow-[0_0_8px_rgba(110,180,108,0.8)]" />
+          <span className="absolute top-1/3 -left-2 w-1 h-1 rounded-full bg-purple/60 shadow-[0_0_8px_rgba(131,120,204,0.8)]" />
+        </motion.div>
+
+        <motion.div
+          style={{ rotateX: cardRotateX, rotateY: cardRotateY, transformStyle: 'preserve-3d' }}
+          className="relative bg-white dark:bg-dark-card border border-border-light/70 dark:border-border-dark/70 rounded-3xl shadow-[0_30px_70px_-15px_rgba(42,175,160,0.35)] dark:shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] p-6 space-y-5"
+        >
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center">
-                <PieChart size={16} strokeWidth={2} className="text-primary" />
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-xl bg-primary/12 flex items-center justify-center">
+                <PieChart size={18} strokeWidth={2} className="text-primary" />
               </div>
               <div>
-                <div className="text-xs text-text-muted dark:text-[#8EA8A5] font-semibold">Hasil Analisis</div>
-                <div className="text-sm font-black text-text-dark dark:text-white">Skrining Fuzzy</div>
+                <div className="text-[11px] text-text-muted dark:text-[#8EA8A5] font-semibold">Hasil Analisis</div>
+                <div className="text-sm font-black text-text-dark dark:text-white">Skrining Fuzzy Tahani</div>
               </div>
             </div>
-            <span className="text-[10px] font-bold bg-yellow/10 text-yellow border border-yellow/30 px-2 py-1 rounded-full">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-[10px] font-bold bg-yellow/10 text-yellow border border-yellow/30 px-2.5 py-1 rounded-full"
+            >
               RINGAN
-            </span>
+            </motion.span>
           </div>
 
           <div className="flex items-center justify-center">
@@ -282,34 +309,76 @@ function HeroIllustration({ sx, sy }: { sx: MotionValue<number>; sy: MotionValue
               </motion.div>
             ))}
           </div>
-        </div>
-
-        <motion.div
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-          className="absolute -top-3 -left-8 bg-white dark:bg-dark-card border border-border-light dark:border-border-dark shadow-xl rounded-2xl px-3 py-2.5 flex items-center gap-2"
-        >
-          <div className="w-8 h-8 rounded-lg bg-yellow/15 flex items-center justify-center">
-            <Flame size={16} strokeWidth={2} className="text-yellow" />
-          </div>
-          <div>
-            <div className="text-[10px] text-text-muted dark:text-[#8EA8A5] font-semibold leading-none">Streak</div>
-            <div className="text-sm font-black text-text-dark dark:text-white leading-tight">7 Hari</div>
-          </div>
         </motion.div>
 
         <motion.div
-          animate={{ y: [0, -12, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute -bottom-4 -right-6 bg-white dark:bg-dark-card border border-border-light dark:border-border-dark shadow-xl rounded-2xl px-3 py-2.5 flex items-center gap-2"
+          style={{ x: badgeShiftX, y: badgeShiftY }}
+          initial={{ opacity: 0, scale: 0.6, x: -40, y: -20 }}
+          animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute -top-10 -left-10 sm:-left-16 md:-left-24 z-20"
         >
-          <div className="w-8 h-8 rounded-lg bg-green/15 flex items-center justify-center">
-            <Sparkles size={16} strokeWidth={2} className="text-green" />
-          </div>
-          <div>
-            <div className="text-[10px] text-text-muted dark:text-[#8EA8A5] font-semibold leading-none">Intervensi</div>
-            <div className="text-sm font-black text-text-dark dark:text-white leading-tight">Selesai</div>
-          </div>
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+            className="relative bg-white dark:bg-dark-card border border-border-light dark:border-border-dark shadow-[0_15px_40px_-10px_rgba(215,155,53,0.45)] dark:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.6)] rounded-2xl px-4 py-3 flex items-center gap-3"
+          >
+            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-yellow/15 via-transparent to-transparent pointer-events-none" />
+            <div className="relative">
+              <motion.div
+                className="absolute -inset-1.5 rounded-2xl border-2 border-dashed border-yellow/45"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+              />
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-yellow/35 blur-md"
+                animate={{ opacity: [0.4, 0.85, 0.4] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              <div className="relative w-11 h-11 rounded-xl bg-yellow/15 flex items-center justify-center">
+                <Flame size={20} strokeWidth={2.2} className="text-yellow" />
+              </div>
+            </div>
+            <div className="relative">
+              <div className="text-[10px] text-text-muted dark:text-[#8EA8A5] font-bold uppercase tracking-wider leading-none">Streak</div>
+              <div className="text-lg font-black text-text-dark dark:text-white leading-tight mt-0.5">7 Hari</div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          style={{ x: badgeShiftX, y: badgeShiftY }}
+          initial={{ opacity: 0, scale: 0.6, x: 40, y: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute -bottom-8 -right-8 sm:-right-12 md:-right-20 z-20"
+        >
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+            className="relative bg-white dark:bg-dark-card border border-border-light dark:border-border-dark shadow-[0_15px_40px_-10px_rgba(110,180,108,0.45)] dark:shadow-[0_15px_40px_-10px_rgba(0,0,0,0.6)] rounded-2xl px-4 py-3 flex items-center gap-3"
+          >
+            <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-green/15 via-transparent to-transparent pointer-events-none" />
+            <div className="relative">
+              <motion.div
+                className="absolute -inset-1.5 rounded-2xl border-2 border-dashed border-green/45"
+                animate={{ rotate: -360 }}
+                transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
+              />
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-green/35 blur-md"
+                animate={{ opacity: [0.4, 0.85, 0.4] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: 0.4 }}
+              />
+              <div className="relative w-11 h-11 rounded-xl bg-green/15 flex items-center justify-center">
+                <Sparkles size={20} strokeWidth={2.2} className="text-green" />
+              </div>
+            </div>
+            <div className="relative">
+              <div className="text-[10px] text-text-muted dark:text-[#8EA8A5] font-bold uppercase tracking-wider leading-none">Intervensi</div>
+              <div className="text-lg font-black text-text-dark dark:text-white leading-tight mt-0.5">Selesai</div>
+            </div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>
@@ -381,43 +450,250 @@ function Stats() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
-  const items = [
-    { value: 1,  suffix: ' dari 5',  label: 'Mahasiswa berjuang dengan kesehatan mental', Icon: Users     },
-    { value: 40, suffix: ' menit',   label: 'Waktu rata-rata satu siklus skrining penuh',  Icon: Timer,    prefix: '<' },
-    { value: 90, suffix: '%',        label: 'Pengguna merasa lebih memahami kondisinya',   Icon: BarChart3 },
+  const crisisStats = [
+    {
+      value: 12, suffix: ' Juta+',
+      label: 'penduduk Indonesia mengalami depresi',
+      sub: 'Estimasi 6.1% dari populasi usia ≥15 tahun',
+      source: 'Riskesdas 2018 · Kemenkes RI',
+      color: '#E06458',
+      Icon: HeartPulse,
+    },
+    {
+      value: 1, suffix: ' dari 3',
+      label: 'remaja Indonesia memiliki masalah kesehatan mental',
+      sub: 'dalam 12 bulan terakhir, usia 10–17 tahun',
+      source: 'I-NAMHS 2022 · UGM × Johns Hopkins',
+      color: '#D9A23B',
+      Icon: Brain,
+    },
+    {
+      value: 90, suffix: '%',
+      label: 'tidak menerima penanganan profesional',
+      sub: 'Treatment gap kesehatan mental di Indonesia',
+      source: 'WHO Mental Health Atlas · Kemenkes RI',
+      color: '#8378CC',
+      Icon: AlertTriangle,
+    },
+  ]
+
+  const solutions = [
+    { Icon: ClipboardList, label: 'Skrining 40 Menit',     desc: 'Menjembatani jutaan yang tak terdeteksi sejak dini'    },
+    { Icon: Brain,         label: 'Analisis Fuzzy AI',     desc: 'Hasil personal & nuansa, bukan label kaku biner'       },
+    { Icon: HandHeart,     label: 'Intervensi Bertahap',   desc: 'Panduan konkret pasca-skrining yang bisa diakses'      },
+    { Icon: ShieldCheck,   label: 'Privat & Akses 24/7',   desc: 'Tersedia kapan saat dibutuhkan, datamu tetap aman'     },
   ]
 
   return (
-    <section ref={ref} className="relative bg-[#0D4440] text-white py-20 sm:py-24 overflow-hidden">
-      <div
+    <section ref={ref} className="relative bg-gradient-to-br from-[#FFF8F2] via-[#FCEEE6] to-[#FFF6EE] dark:from-[#0F2D28] dark:via-[#163530] dark:to-[#0F2D28] text-text-dark dark:text-white py-24 sm:py-32 overflow-hidden">
+      <motion.div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#2AAFA0_0%,transparent_50%),radial-gradient(circle_at_80%_80%,#5EA85C_0%,transparent_50%)] opacity-20"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(224,100,88,0.10),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(42,175,160,0.08),transparent_55%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(224,100,88,0.16),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(42,175,160,0.12),transparent_55%)]"
+        animate={{ opacity: [0.65, 1, 0.65] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_30%,transparent_100%)]"
       />
 
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center">
-        {items.map((s, i) => (
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 bg-red/12 dark:bg-red/15 border border-red/40 text-red rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-wider"
+        >
+          <motion.span
+            animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-1.5 h-1.5 rounded-full bg-red shadow-[0_0_10px_rgba(224,100,88,0.9)]"
+          />
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mt-6 text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] max-w-3xl text-text-dark dark:text-white"
+        >
+          Setiap Jam, Indonesia Kehilangan{' '}
+          <span className="bg-gradient-to-r from-red via-[#E88573] to-[#D9A23B] bg-clip-text text-transparent">
+            1 Nyawa
+          </span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-5 text-base md:text-lg text-text-muted dark:text-white/70 max-w-2xl leading-relaxed"
+        >
+          Krisis kesehatan mental di Indonesia berlangsung dalam senyap. Data di bawah ini adalah realita yang harus kita lihat dan tangani bersama.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.97 }}
+          animate={inView ? { opacity: 1, y: 0, scale: 1 } : undefined}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 relative overflow-hidden rounded-3xl border border-red/35 bg-white/95 dark:bg-[#19332E]/80 backdrop-blur-sm p-7 md:p-10 shadow-[0_30px_70px_-20px_rgba(224,100,88,0.30)] dark:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.55)]"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute -top-24 -right-16 w-72 h-72 rounded-full bg-red/15 dark:bg-red/20 blur-3xl pointer-events-none"
+          />
+
+          <div className="relative grid md:grid-cols-[auto_1fr] gap-7 md:gap-10 items-center">
+            <div className="relative shrink-0 mx-auto md:mx-0">
+              <motion.div
+                className="absolute inset-0 rounded-3xl bg-red/30 dark:bg-red/35 blur-2xl"
+                animate={{ opacity: [0.5, 0.95, 0.5], scale: [0.95, 1.15, 0.95] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              <div className="relative grid h-28 w-28 md:h-32 md:w-32 place-items-center rounded-3xl bg-gradient-to-br from-red/22 to-red/8 dark:from-red/30 dark:to-red/8 border border-red/45 shadow-[0_15px_50px_-10px_rgba(224,100,88,0.45)]">
+                <motion.div
+                  animate={{ scale: [1, 1.18, 1, 1.18, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, times: [0, 0.18, 0.36, 0.54, 1], ease: 'easeOut' }}
+                >
+                  <HeartPulse size={58} strokeWidth={1.8} className="text-red drop-shadow-[0_0_12px_rgba(224,100,88,0.5)]" />
+                </motion.div>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-center md:text-left">
+              <div className="flex items-baseline gap-2 md:gap-3 flex-wrap justify-center md:justify-start">
+                <span className="text-2xl md:text-3xl font-bold text-text-muted dark:text-white/60">±</span>
+                <span className="text-6xl md:text-7xl lg:text-8xl font-black tabular-nums leading-none bg-gradient-to-br from-red via-[#E06458] to-[#A8443A] dark:from-[#FFD9D2] dark:via-red dark:to-[#A8443A] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(224,100,88,0.25)]">
+                  {inView && <AnimatedNumber value={24} duration={2.2} />}
+                </span>
+                <span className="text-xl md:text-2xl font-bold text-text-dark dark:text-white/85">jiwa per hari</span>
+              </div>
+
+              <div className="flex justify-center md:justify-start" aria-hidden="true">
+                <svg
+                  className="w-[260px] h-7 text-red/70"
+                  viewBox="0 0 260 32"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <motion.path
+                    d="M 0 16 L 60 16 L 75 16 L 88 5 L 100 27 L 112 2 L 124 30 L 136 16 L 160 16 L 175 16 L 188 7 L 200 25 L 212 4 L 224 28 L 236 16 L 260 16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={inView ? { pathLength: 1, opacity: 1 } : undefined}
+                    transition={{ pathLength: { duration: 2.4, ease: 'easeInOut', delay: 0.7 }, opacity: { duration: 0.3, delay: 0.7 } }}
+                  />
+                </svg>
+              </div>
+
+              <p className="text-base md:text-lg text-text-dark dark:text-white/90 leading-relaxed max-w-xl mx-auto md:mx-0">
+                Indonesia diperkirakan kehilangan{' '}
+                <span className="text-red font-black bg-red/10 dark:bg-red/15 px-1.5 rounded">~1 nyawa setiap jam</span>{' '}
+                akibat bunuh diri. Banyak yang berjuang sendiri, tanpa ruang aman untuk dikenali sejak awal.
+              </p>
+
+              <div className="flex items-center gap-2 text-[11px] text-text-muted dark:text-white/55 pt-3 border-t border-border-light dark:border-white/10 justify-center md:justify-start">
+                <ExternalLink size={11} strokeWidth={2} />
+                <span className="font-semibold">Sumber: WHO Global Health Estimates 2021 · I-NAMHS 2022</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="mt-8 grid md:grid-cols-3 gap-5">
+          {crisisStats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : undefined}
+              transition={{ duration: 0.6, delay: 0.55 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4 }}
+              className="group relative overflow-hidden rounded-2xl bg-white/95 dark:bg-[#19332E]/65 backdrop-blur-sm border border-border-light dark:border-white/12 p-6 hover:border-primary/30 dark:hover:border-white/25 transition-colors shadow-[0_10px_30px_-15px_rgba(23,62,56,0.20)] dark:shadow-[0_15px_40px_-20px_rgba(0,0,0,0.5)]"
+            >
+              <div
+                aria-hidden="true"
+                className="absolute -top-12 -right-12 w-36 h-36 rounded-full blur-3xl opacity-25 group-hover:opacity-45 transition-opacity"
+                style={{ background: stat.color }}
+              />
+              <div className="relative">
+                <div
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-xl mb-5"
+                  style={{ background: stat.color + '22', color: stat.color, boxShadow: `0 0 30px -12px ${stat.color}` }}
+                >
+                  <stat.Icon size={20} strokeWidth={2} />
+                </div>
+                <div
+                  className="text-5xl md:text-[3.25rem] font-black tabular-nums leading-none flex items-baseline gap-1.5"
+                  style={{ color: stat.color }}
+                >
+                  {inView && <AnimatedNumber value={stat.value} duration={1.8} />}
+                  <span className="text-xl md:text-2xl font-bold text-text-dark dark:text-white/85">{stat.suffix}</span>
+                </div>
+                <p className="mt-4 text-sm font-bold text-text-dark dark:text-white leading-snug">{stat.label}</p>
+                <p className="mt-1 text-xs text-text-muted dark:text-white/55 leading-relaxed">{stat.sub}</p>
+                <div className="mt-5 pt-3 border-t border-border-light dark:border-white/10 flex items-center gap-1.5 text-[10px] text-text-muted/85 dark:text-white/50 font-bold uppercase tracking-wide">
+                  <ExternalLink size={10} strokeWidth={2.2} />
+                  <span className="normal-case tracking-normal">{stat.source}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-14 relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/15 via-green/8 to-purple/12 dark:from-primary/20 dark:via-green/12 dark:to-purple/15 border border-primary/35 backdrop-blur-sm p-7 md:p-10"
+        >
           <motion.div
-            key={s.label}
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : undefined}
-            transition={{ duration: 0.6, delay: i * 0.12, ease: 'easeOut' }}
-            className="space-y-3"
-          >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 border border-white/15">
-              <s.Icon size={22} strokeWidth={1.75} />
+            aria-hidden="true"
+            className="absolute -top-20 -left-20 w-60 h-60 rounded-full bg-primary/30 dark:bg-primary/25 blur-3xl"
+            animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+          />
+          <motion.div
+            aria-hidden="true"
+            className="absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-green/25 dark:bg-green/20 blur-3xl"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          />
+
+          <div className="relative text-center mb-9">
+            <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 text-primary rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-wider mb-5">
+              <Sparkles size={13} strokeWidth={2.5} />
+              Bagaimana MindBloom Menjawab
             </div>
-            <div className="text-4xl md:text-5xl font-black tabular-nums flex items-baseline justify-center gap-1">
-              {s.prefix && <span>{s.prefix}</span>}
-              {inView && <AnimatedNumber value={s.value} duration={1.6} />}
-              <span className="text-2xl md:text-3xl font-bold text-white/80">{s.suffix}</span>
-            </div>
-            <p className="text-sm text-white/70 max-w-xs mx-auto leading-relaxed">{s.label}</p>
-          </motion.div>
-        ))}
+            <h3 className="text-2xl md:text-4xl font-black tracking-tight leading-tight max-w-3xl mx-auto text-text-dark dark:text-white">
+              Deteksi dini, analisis personal, dan intervensi terstruktur, {' '}
+              <span className="bg-gradient-to-r from-primary to-green bg-clip-text text-transparent">
+                semuanya di satu ruang aman.
+              </span>
+            </h3>
+          </div>
+
+          <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {solutions.map((sol, i) => (
+              <motion.div
+                key={sol.label}
+                initial={{ opacity: 0, y: 16 }}
+                animate={inView ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: 0.55, delay: 1.2 + i * 0.1 }}
+                whileHover={{ y: -3 }}
+                className="relative bg-white/90 dark:bg-white/[0.06] border border-border-light dark:border-white/15 rounded-2xl p-5 hover:bg-white dark:hover:bg-white/[0.10] hover:border-primary/30 dark:hover:border-white/25 transition-colors shadow-[0_8px_24px_-12px_rgba(23,62,56,0.18)] dark:shadow-none"
+              >
+                <div className="w-11 h-11 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-3.5 shadow-[0_0_25px_-10px_rgba(42,175,160,0.55)]">
+                  <sol.Icon size={20} strokeWidth={2} />
+                </div>
+                <h4 className="text-sm font-black mb-1.5 text-text-dark dark:text-white">{sol.label}</h4>
+                <p className="text-xs text-text-muted dark:text-white/65 leading-relaxed">{sol.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -427,13 +703,13 @@ function Features() {
   const items = [
     {
       Icon: Brain, color: '#7B6FCA', bg: 'bg-purple/10', glow: 'shadow-[0_0_60px_-15px_rgba(123,111,202,0.5)]',
-      title: 'Analisis Fuzzy AI',
-      desc: 'Bukan sekadar skor — sistem kami memahami nuansa kondisimu lewat logika fuzzy dan derajat keanggotaan.',
+      title: 'Analisis Fuzzy Tahani AI',
+      desc: 'Bukan sekadar skor, sistem kami memahami nuansa kondisimu lewat logika fuzzy tahani dan derajat keanggotaan.',
     },
     {
       Icon: HandHeart, color: '#2AAFA0', bg: 'bg-primary/10', glow: 'shadow-[0_0_60px_-15px_rgba(42,175,160,0.5)]',
       title: 'Intervensi Terarah',
-      desc: 'Terapi musik, meditasi terpandu, dan refleksi jurnal — dalam satu alur yang menenangkan.',
+      desc: 'Terapi musik, meditasi terpandu, dan refleksi jurnal dalam satu alur yang menenangkan.',
     },
     {
       Icon: MapPin, color: '#5EA85C', bg: 'bg-green/10', glow: 'shadow-[0_0_60px_-15px_rgba(94,168,92,0.5)]',
@@ -489,7 +765,7 @@ function HowItWorks() {
 
   const steps = [
     { Icon: ClipboardList, title: 'Jawab Pertanyaan',  desc: '14 pertanyaan singkat untuk memetakan 5 dimensi kondisimu.' },
-    { Icon: Brain,          title: 'AI Menganalisis',    desc: 'Logika fuzzy memproses jawabanmu dengan kehalusan nuansa.' },
+    { Icon: Brain,          title: 'AI Menganalisis',    desc: 'Logika fuzzy tahani memproses jawabanmu dengan kehalusan nuansa.' },
     { Icon: PieChart,       title: 'Lihat Hasilmu',      desc: 'Skor, distribusi derajat, dan rekomendasi personal.'        },
     { Icon: HandHeart,      title: 'Mulai Intervensi',   desc: 'Tiga langkah aktif: musik, meditasi, dan jurnal refleksi.'  },
   ]
@@ -595,11 +871,11 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="col-span-2 md:col-span-2 space-y-3">
           <div className="flex items-center gap-2">
-            <Leaf size={22} strokeWidth={1.75} className="text-[#5EA85C]" />
+            <MindbloomLogo size={30} noMotion />
             <span className="text-lg font-black">MindBloom</span>
           </div>
           <p className="text-sm text-white/65 max-w-sm leading-relaxed">
-            Pendamping kesehatan mental berbasis Fuzzy AI — memahami nuansa kondisimu, satu jawaban dalam satu waktu.
+            Pendamping kesehatan mental berbasis Fuzzy Tahani AI memahami nuansa kondisimu, satu jawaban dalam satu waktu.
           </p>
         </div>
 
@@ -621,7 +897,7 @@ function Footer() {
             <Phone size={16} strokeWidth={2} />
             <div>
               <div className="text-sm font-black leading-none">119 ext 8</div>
-              <div className="text-[10px] text-white/65 mt-0.5">SEJIWA — 24 jam</div>
+              <div className="text-[10px] text-white/65 mt-0.5">SEJIWA 24 jam</div>
             </div>
           </a>
         </div>

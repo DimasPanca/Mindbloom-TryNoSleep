@@ -167,7 +167,7 @@ export default function ProfilePage() {
 
   async function handleSignOut() {
     await signOut()
-    navigate('/login', { replace: true })
+    navigate('/', { replace: true })
   }
 
   if (!profile) {

@@ -1,7 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Check, Eye, EyeOff, Leaf, Loader2, X } from 'lucide-react'
+import { ArrowLeft, Check, Eye, EyeOff, Loader2, X } from 'lucide-react'
+import MindbloomLogo from '@/components/MindbloomLogo'
 import { toast } from 'sonner'
 import OrganicBackground from '@/components/OrganicBackground'
 import { useAuth } from '@/contexts/AuthContext'
@@ -108,9 +109,7 @@ export default function RegisterPage() {
         </Link>
 
         <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="p-2 bg-[#E8F6F3] dark:bg-[#0F2522] rounded-xl">
-            <Leaf size={24} strokeWidth={1.5} className="text-primary" />
-          </div>
+          <MindbloomLogo size={44} />
           <span className="text-2xl font-black text-text-dark dark:text-white">
             MindBloom
           </span>
