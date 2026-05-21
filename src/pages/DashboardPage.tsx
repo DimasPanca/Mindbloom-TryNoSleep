@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import {
-  Activity, Angry, ArrowRight, BookOpen, Brain, CalendarCheck,
+  Activity, Angry, ArrowRight, BookOpen, Brain, CalendarCheck, CalendarDays,
   CheckCircle2, ChevronRight, ClipboardList, Coffee, Droplets, Flame,
   Footprints, Frown, Heart, History, Inbox, Laugh, Lightbulb,
   Meh, Moon, Music, PhoneCall, RefreshCw, Smile, Sparkles, Sun,
@@ -363,6 +363,29 @@ export default function DashboardPage() {
             loading={loading}
           />
         </div>
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ...spring, delay: 0.34 }}
+          whileHover={hoverLift}
+        >
+          <Link
+            to="/mood-calendar"
+            className="group relative flex items-center gap-4 overflow-hidden rounded-[1.75rem] border border-primary/20 bg-gradient-to-r from-primary/8 to-primary/4 p-5 transition-all hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 dark:from-primary/12 dark:to-primary/6"
+          >
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/15">
+              <CalendarDays size={24} strokeWidth={1.8} className="text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-sm font-black text-text-dark dark:text-white">Kalender Mood</div>
+              <div className="text-xs font-semibold text-text-muted dark:text-[#9EB4AC]">
+                Lihat pola mood harianmu dan temukan insight
+              </div>
+            </div>
+            <ChevronRight size={20} strokeWidth={2} className="text-primary shrink-0 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </motion.section>
 
         {!loading && history.length >= 2 && (
           <motion.section

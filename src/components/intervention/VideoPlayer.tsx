@@ -29,13 +29,13 @@ const TABS: VideoTab[] = [
   {
     label:   'Grounding',
     Icon:    Anchor,
-    embedId: 'FBFBbkRiYgw',
+    embedId: '718uW3_1GlE',
     tip:     'Teknik 5-4-3-2-1 membantu menghadirkan dirimu ke momen saat ini.',
   },
   {
     label:   'Afirmasi',
     Icon:    MessageCircle,
-    embedId: '2CUnYyNnDBA',
+    embedId: '4LKIQwJ3Kdk',
     tip:     'Ulangi afirmasi positif untuk membentuk pola pikir yang lebih sehat.',
   },
 ]

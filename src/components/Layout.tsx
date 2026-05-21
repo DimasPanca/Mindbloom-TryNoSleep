@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import {
-  ClipboardList, History, Home, Leaf, LifeBuoy, LogOut, Menu, Moon,
+  CalendarDays, ClipboardList, History, Home, Info, Leaf, LifeBuoy, LogOut, Menu, Moon,
   Phone, Sun, User, X,
 } from 'lucide-react'
 import { useAuth } from '@/contexts/AuthContext'
@@ -54,7 +54,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="app-page-shell bg-bg text-text-dark dark:bg-dark-root dark:text-[#F3F0E8]">
       <aside className="hidden lg:flex fixed inset-y-0 left-0 w-72 bg-surface/90 dark:bg-[#0C211C]/95 border-r border-border-light/80 dark:border-border-dark/80 backdrop-blur-xl flex-col z-40 shadow-[16px_0_50px_rgba(23,62,56,0.06)] dark:shadow-[16px_0_50px_rgba(0,0,0,0.2)]">
-        <div className="px-5 pt-6 pb-5">
+        <div className="px-5 pt-6 pb-5 flex items-center justify-between">
           <Link to="/dashboard" className="group flex items-center gap-3">
             <div className="relative grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary">
               <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100" />
@@ -65,6 +65,38 @@ export default function Layout({ children }: { children: ReactNode }) {
               <span className="block text-[11px] font-bold text-text-muted dark:text-[#9EB4AC]">Mental wellness space</span>
             </div>
           </Link>
+          <button
+            type="button"
+            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl text-text-muted transition-colors hover:bg-primary/10 hover:text-primary dark:text-[#9EB4AC] dark:hover:bg-primary/15 dark:hover:text-primary"
+            aria-label="Toggle tema"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {resolvedTheme === 'dark' ? (
+                <motion.span
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                  transition={{ duration: 0.22, ease: 'easeInOut' }}
+                  style={{ display: 'flex' }}
+                >
+                  <Sun size={19} strokeWidth={2} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon"
+                  initial={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                  transition={{ duration: 0.22, ease: 'easeInOut' }}
+                  style={{ display: 'flex' }}
+                >
+                  <Moon size={19} strokeWidth={2} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
 
         <nav className="flex-1 px-4 py-2 space-y-1.5 overflow-y-auto">
@@ -101,6 +133,76 @@ export default function Layout({ children }: { children: ReactNode }) {
               </motion.div>
             )
           })}
+
+          <div className="mt-3 pt-3 border-t border-border-light/60 dark:border-border-dark/60">
+            {(() => {
+              const active = pathname.startsWith('/mood-calendar')
+              return (
+                <motion.div whileHover={active ? undefined : { x: 3 }} transition={spring}>
+                  <Link
+                    to="/mood-calendar"
+                    className={cn(
+                      'relative flex items-center gap-3 overflow-hidden rounded-2xl px-4 py-3 text-sm font-black transition-colors',
+                      active
+                        ? 'text-primary'
+                        : 'text-text-muted dark:text-[#9EB4AC] hover:text-text-dark dark:hover:text-white hover:bg-white/55 dark:hover:bg-white/5',
+                    )}
+                  >
+                    {active && (
+                      <motion.div
+                        layoutId="sidebar-active"
+                        className="absolute inset-0 rounded-2xl bg-primary/10 dark:bg-primary/15"
+                        transition={spring}
+                      />
+                    )}
+                    {active && (
+                      <motion.div
+                        layoutId="sidebar-active-rail"
+                        className="absolute left-0 top-3 bottom-3 w-1 rounded-r-full bg-primary"
+                        transition={spring}
+                      />
+                    )}
+                    <CalendarDays size={20} strokeWidth={2.1} className="relative z-10" />
+                    <span className="relative z-10">Kalender Mood</span>
+                  </Link>
+                </motion.div>
+              )
+            })()}
+
+            {(() => {
+              const active = pathname.startsWith('/about')
+              return (
+                <motion.div whileHover={active ? undefined : { x: 3 }} transition={spring} className="mt-1.5">
+                  <Link
+                    to="/about"
+                    className={cn(
+                      'relative flex items-center gap-3 overflow-hidden rounded-2xl px-4 py-3 text-sm font-black transition-colors',
+                      active
+                        ? 'text-primary'
+                        : 'text-text-muted dark:text-[#9EB4AC] hover:text-text-dark dark:hover:text-white hover:bg-white/55 dark:hover:bg-white/5',
+                    )}
+                  >
+                    {active && (
+                      <motion.div
+                        layoutId="sidebar-active"
+                        className="absolute inset-0 rounded-2xl bg-primary/10 dark:bg-primary/15"
+                        transition={spring}
+                      />
+                    )}
+                    {active && (
+                      <motion.div
+                        layoutId="sidebar-active-rail"
+                        className="absolute left-0 top-3 bottom-3 w-1 rounded-r-full bg-primary"
+                        transition={spring}
+                      />
+                    )}
+                    <Info size={20} strokeWidth={2.1} className="relative z-10" />
+                    <span className="relative z-10">Tentang Sistem</span>
+                  </Link>
+                </motion.div>
+              )
+            })()}
+          </div>
         </nav>
 
         <div className="px-4 pt-3 pb-5 border-t border-border-light/80 dark:border-border-dark/80 space-y-2.5">
@@ -118,20 +220,6 @@ export default function Layout({ children }: { children: ReactNode }) {
               <div className="text-[11px] font-bold text-text-muted dark:text-[#9EB4AC]">Lihat profil</div>
             </div>
           </Link>
-
-          <button
-            type="button"
-            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="w-full flex items-center justify-between gap-3 rounded-2xl px-4 py-2.5 text-sm font-black text-text-muted transition-colors hover:bg-white/65 hover:text-text-dark dark:text-[#9EB4AC] dark:hover:bg-white/5 dark:hover:text-white"
-          >
-            <span className="flex items-center gap-3">
-              {resolvedTheme === 'dark'
-                ? <Sun size={18} strokeWidth={2} />
-                : <Moon size={18} strokeWidth={2} />}
-              {resolvedTheme === 'dark' ? 'Mode Terang' : 'Mode Gelap'}
-            </span>
-            <span className="h-2 w-2 rounded-full bg-primary" />
-          </button>
 
           <Link
             to="/emergency"
@@ -208,14 +296,48 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <Leaf size={22} strokeWidth={1.8} className="text-primary" />
                   <span className="text-lg font-black text-text-dark dark:text-white">MindBloom</span>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setDrawerOpen(false)}
-                  className="grid h-9 w-9 place-items-center rounded-xl text-text-muted hover:bg-bg hover:text-text-dark dark:hover:bg-dark-hover dark:hover:text-white"
-                  aria-label="Tutup"
-                >
-                  <X size={20} strokeWidth={2} />
-                </button>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                    className="grid h-9 w-9 place-items-center rounded-xl text-text-muted hover:bg-primary/10 hover:text-primary dark:text-[#9EB4AC] dark:hover:bg-primary/15 dark:hover:text-primary"
+                    aria-label="Toggle tema"
+                  >
+                    <AnimatePresence mode="wait" initial={false}>
+                      {resolvedTheme === 'dark' ? (
+                        <motion.span
+                          key="sun-m"
+                          initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                          animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                          exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                          transition={{ duration: 0.22, ease: 'easeInOut' }}
+                          style={{ display: 'flex' }}
+                        >
+                          <Sun size={19} strokeWidth={2} />
+                        </motion.span>
+                      ) : (
+                        <motion.span
+                          key="moon-m"
+                          initial={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                          animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                          exit={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                          transition={{ duration: 0.22, ease: 'easeInOut' }}
+                          style={{ display: 'flex' }}
+                        >
+                          <Moon size={19} strokeWidth={2} />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setDrawerOpen(false)}
+                    className="grid h-9 w-9 place-items-center rounded-xl text-text-muted hover:bg-bg hover:text-text-dark dark:hover:bg-dark-hover dark:hover:text-white"
+                    aria-label="Tutup"
+                  >
+                    <X size={20} strokeWidth={2} />
+                  </button>
+                </div>
               </div>
 
               <nav className="flex-1 space-y-1.5 overflow-y-auto px-4 py-4">
@@ -237,19 +359,33 @@ export default function Layout({ children }: { children: ReactNode }) {
                     </Link>
                   )
                 })}
+                <Link
+                  to="/mood-calendar"
+                  className={cn(
+                    'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-black transition-colors',
+                    pathname.startsWith('/mood-calendar')
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-text-muted hover:bg-bg hover:text-text-dark dark:text-[#9EB4AC] dark:hover:bg-dark-hover dark:hover:text-white',
+                  )}
+                >
+                  <CalendarDays size={20} strokeWidth={2.1} />
+                  Kalender Mood
+                </Link>
+                <Link
+                  to="/about"
+                  className={cn(
+                    'flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-black transition-colors',
+                    pathname.startsWith('/about')
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-text-muted hover:bg-bg hover:text-text-dark dark:text-[#9EB4AC] dark:hover:bg-dark-hover dark:hover:text-white',
+                  )}
+                >
+                  <Info size={20} strokeWidth={2.1} />
+                  Tentang Sistem
+                </Link>
               </nav>
 
               <div className="space-y-2 border-t border-border-light p-4 dark:border-border-dark">
-                <button
-                  type="button"
-                  onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-                  className="w-full flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-black text-text-muted hover:bg-bg hover:text-text-dark dark:text-[#9EB4AC] dark:hover:bg-dark-hover dark:hover:text-white"
-                >
-                  {resolvedTheme === 'dark'
-                    ? <Sun size={18} strokeWidth={2} />
-                    : <Moon size={18} strokeWidth={2} />}
-                  {resolvedTheme === 'dark' ? 'Mode Terang' : 'Mode Gelap'}
-                </button>
                 <Link
                   to="/emergency"
                   className="flex items-center gap-3 rounded-2xl border border-red/25 bg-[#FDF0EE] px-4 py-3 text-red dark:bg-[#2A1714]"

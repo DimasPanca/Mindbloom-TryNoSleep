@@ -186,7 +186,7 @@ export default function ReferralPage() {
           </div>
         </motion.section>
 
-        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid gap-5 lg:grid-cols-2">
           <LocationPanel
             coords={coords}
             locating={locating}
@@ -290,7 +290,7 @@ export default function ReferralPage() {
           ))}
         </section>
 
-        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-5 lg:grid-cols-2">
           <HotlinePanel />
           <TipsPanel />
         </div>
@@ -411,7 +411,7 @@ function HotlinePanel() {
         {HOTLINES.map(h => (
           <div
             key={h.name}
-            className="flex items-center justify-between gap-3 rounded-2xl bg-surface-soft/80 p-3 dark:bg-dark-hover"
+            className="flex flex-col gap-2 rounded-2xl bg-surface-soft/80 p-3 dark:bg-dark-hover sm:flex-row sm:items-center sm:justify-between sm:gap-3"
           >
             <div className="min-w-0">
               <div className="text-sm font-black text-text-dark dark:text-white">{h.name}</div>
@@ -419,7 +419,7 @@ function HotlinePanel() {
             </div>
             <a
               href={`tel:${h.tel}`}
-              className="flex shrink-0 items-center gap-1.5 rounded-2xl bg-primary px-3 py-2 text-sm font-black text-white transition-colors hover:bg-primary-dark"
+              className="flex w-full items-center justify-center gap-1.5 rounded-2xl bg-primary px-3 py-2 text-sm font-black text-white transition-colors hover:bg-primary-dark sm:w-auto"
             >
               <Phone size={14} strokeWidth={2.2} />
               {h.number}
@@ -440,12 +440,12 @@ function TipsPanel() {
       className="space-y-3"
     >
       <h2 className="text-base font-black text-text-dark dark:text-white">Tips Persiapan</h2>
-      <div className="flex gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-visible">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {TIPS.map(({ Icon, title, body }) => (
           <motion.div
             key={title}
             whileHover={hoverLift}
-            className="surface-card min-w-[230px] rounded-[1.5rem] p-4 sm:min-w-0"
+            className="surface-card rounded-[1.5rem] p-4"
           >
             <div className="mb-3 grid h-10 w-10 place-items-center rounded-2xl bg-primary/10">
               <Icon size={20} strokeWidth={1.8} className="text-primary" />

@@ -11,6 +11,8 @@ import HistoryPage from '@/pages/HistoryPage'
 import ProfilePage from '@/pages/ProfilePage'
 import ReferralPage from '@/pages/ReferralPage'
 import EmergencyPage from '@/pages/EmergencyPage'
+import MoodCalendarPage from '@/pages/MoodCalendarPage'
+import AboutPage from '@/pages/AboutPage'
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/referral" element={<ReferralPage />} />
       <Route path="/emergency" element={<EmergencyPage />} />
+      <Route path="/mood-calendar" element={<MoodCalendarPage />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

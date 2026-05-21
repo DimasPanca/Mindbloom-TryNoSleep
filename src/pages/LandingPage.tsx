@@ -581,7 +581,7 @@ function CtaBand() {
           to="/register"
           className="mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-2xl text-sm md:text-base font-black text-[#0D4440] bg-white hover:bg-white/95 transition-all shadow-2xl shadow-black/20 hover:scale-[1.03] active:scale-100 group"
         >
-          Daftar Gratis — Mulai Skrining
+          Mulai Skrining
           <ArrowRight size={16} strokeWidth={3} className="group-hover:translate-x-1 transition-transform" />
         </Link>
       </motion.div>
