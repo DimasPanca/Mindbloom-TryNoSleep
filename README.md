@@ -1,252 +1,171 @@
 <div align="center">
 
-<img src="./public/logo-terang.svg" alt="MindBloom Logo" width="80" />
+<img src="./public/logo-terang.svg" alt="MindBloom" width="72" />
 
 # MindBloom
-### Mental Wellness Space
+**Mental Wellness Space**
 
-**Platform skrining dan intervensi kesehatan mental berbasis AI untuk Indonesia**
+Platform skrining dan intervensi kesehatan mental berbasis AI untuk Indonesia
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=flat-square&logo=supabase)](https://supabase.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
-[![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=flat-square&logo=vite)](https://vite.dev)
 
 </div>
 
 ---
 
-## 🧠 Tentang MindBloom
+## Latar Belakang
 
-**MindBloom** adalah platform kesehatan mental digital yang dirancang untuk menjawab krisis kesehatan mental di Indonesia. Menggunakan metode **Fuzzy Tahani** sebagai inti kecerdasan buatan, MindBloom mampu menganalisis kondisi psikologis pengguna secara fleksibel dan personal — melampaui sistem deteksi konvensional yang hanya memberikan label hitam-putih.
+Indonesia punya masalah kesehatan mental yang serius. **12 juta orang** hidup dengan depresi, **1 dari 3 remaja** pernah mengalami gangguan mental, dan yang paling mengkhawatirkan   **90% dari mereka tidak pernah mendapat penanganan apapun**.
 
-### Masalah yang Kami Selesaikan
+Bukan karena tidak mau, tapi karena akses yang susah, biaya yang mahal, dan banyak yang bahkan tidak sadar kalau mereka butuh bantuan.
 
-| Data | Sumber |
-|------|--------|
-| **12 Juta+** warga Indonesia menderita depresi | Riskesdas 2018 |
-| **1 dari 3** remaja mengalami masalah kesehatan mental | I-NAMHS 2022 |
-| **90%** penderita tidak mendapat penanganan profesional | WHO |
-
-> *"Masalah terbesar bukan hanya depresi — tapi banyak orang tidak sadar bahwa mereka membutuhkan bantuan."*
-
-MindBloom hadir sebagai **pintu pertama** yang bisa diketuk kapan saja, di mana saja — tanpa biaya, tanpa stigma.
+MindBloom dibuat untuk jadi **pintu pertama**  tempat seseorang bisa mulai memahami kondisi mentalnya, kapan saja dan dari mana saja.
 
 ---
 
-## ✨ Fitur Utama
+## Fitur
 
-### 🔍 Skrining Cerdas (Fuzzy Tahani)
-- Kuesioner **PHQ-9** (depresi) dan **PSS** (stres) yang terstandar secara klinis
-- Diproses dengan **logika fuzzy Tahani** untuk hasil yang nuansatif dan personal
-- Output berupa **skor 0–100** dengan kategori linguistik: *Baik, Cukup, Perlu Perhatian*
-- Pertanyaan adaptif yang menyesuaikan kondisi pengguna
+### Skrining Kesehatan Mental
+Menggunakan kuesioner **PHQ-9** (depresi) dan **PSS** (stres) yang sudah terstandar secara klinis. Hasilnya diproses dengan **metode Fuzzy Tahani**   bukan sekadar skor angka, tapi analisis yang memahami bahwa kondisi mental itu ada spektrumnya, bukan cuma "sehat" atau "tidak sehat".
 
-### 🌿 Program Intervensi Dini (3 Tahap)
-- **🎵 Musik Relaksasi** — 6 kategori audio (Suara Alam, Hujan Lembut, Lo-fi Relax, Gelombang Binaural, Mangkuk Tibetan, Ombak Laut)
-- **🧘 Meditasi Terpandu** — Video panduan (Pernapasan, Pemindaian Tubuh, Grounding, Afirmasi)
-- **📓 Jurnal Digital** — Refleksi terstruktur dengan prompt berbasis hasil skrining
+Output yang dihasilkan berupa skor 0–100 dengan kategori: *Baik, Cukup, atau Perlu Perhatian*.
 
-### 📅 Kalender Mood
-- Tracking kondisi mental harian secara visual
-- Identifikasi pola mood dari waktu ke waktu
-- Melihat progress pemulihan
+### Program Intervensi Dini
+Setelah skrining, pengguna langsung masuk ke 3 tahap intervensi:
 
-### 🏥 Rekomendasi Psikolog
-- Daftar psikolog terdekat berdasarkan lokasi
-- Informasi kontak dan layanan tersedia
-- Transisi mulus dari self-help ke bantuan profesional
+- **Musik Relaksasi**   pilih dari 6 kategori audio (suara alam, hujan, lo-fi, binaural, mangkuk tibetan, ombak laut)
+- **Meditasi Terpandu**   video panduan pernapasan, pemindaian tubuh, grounding, dan afirmasi
+- **Jurnal Refleksi**   tulis pikiran dengan prompt yang disesuaikan hasil skrining
 
-### 🆘 Bantuan Darurat
-- Akses cepat ke hotline krisis 24 jam
-- Nomor darurat: **119 ext 8**
-- Selalu terlihat di sidebar untuk akses instan
+### Kalender Mood
+Tracking kondisi mental harian. Pengguna bisa lihat pola moodnya dari waktu ke waktu dan mengukur apakah ada perubahan setelah rutin melakukan intervensi.
 
-### 🌓 Mode Gelap / Terang
-- Tema adaptif dengan animasi transisi halus
-- Logo otomatis menyesuaikan tema
+### Rekomendasi Psikolog
+Kalau kondisi membutuhkan bantuan lebih lanjut, MindBloom menyediakan daftar psikolog yang bisa dihubungi.
+
+### Bantuan Darurat
+Akses hotline krisis **119 ext 8** (24 jam) yang selalu terlihat di sidebar   untuk kondisi yang tidak bisa menunggu.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### Frontend
-| Teknologi | Versi | Kegunaan |
-|-----------|-------|----------|
-| [React](https://react.dev) | 19 | UI Framework |
-| [TypeScript](https://www.typescriptlang.org) | 6.0 | Type Safety |
-| [Vite](https://vite.dev) | 8.0 | Build Tool |
-| [Tailwind CSS](https://tailwindcss.com) | v4 | Styling |
-| [Framer Motion](https://motion.dev) | 12 | Animasi |
-| [React Router](https://reactrouter.com) | 7 | Routing |
-| [Lucide React](https://lucide.dev) | latest | Icon Library |
-| [Recharts](https://recharts.org) | 3 | Visualisasi Data |
-| [Sonner](https://sonner.emilkowal.ski) | 2 | Toast Notifikasi |
-| [next-themes](https://github.com/pacocoursey/next-themes) | 0.4 | Dark Mode |
+**Frontend**
+- React 19 + TypeScript
+- Vite 8 sebagai build tool
+- Tailwind CSS v4 untuk styling
+- Framer Motion v12 untuk animasi
+- React Router v7 untuk routing
+- Recharts untuk visualisasi data
+- Lucide React untuk ikon
+- next-themes untuk dark/light mode
 
-### Backend & Database
-| Teknologi | Kegunaan |
-|-----------|----------|
-| [Supabase](https://supabase.com) | Authentication, Database, Real-time |
-| PostgreSQL | Penyimpanan data skrining & profil |
+**Backend**
+- Supabase (Auth + PostgreSQL + Realtime)
 
-### AI / Logika
-| Metode | Kegunaan |
-|--------|----------|
-| **Fuzzy Tahani** | Analisis kondisi psikologis pengguna |
-| PHQ-9 | Standar skrining depresi |
-| PSS | Standar skrining stres |
+**AI / Analisis**
+- Metode Fuzzy Tahani untuk pemrosesan hasil skrining
 
 ---
 
-## 🚀 Cara Menjalankan Project
+## Cara Menjalankan
 
-### Prasyarat
-- Node.js **v18+**
-- npm atau yarn
-- Akun [Supabase](https://supabase.com) (untuk backend)
-
-### 1. Clone Repository
+**1. Clone dan install**
 ```bash
 git clone https://github.com/DimasPanca/Mindbloom-TryNoSleep.git
 cd Mindbloom-TryNoSleep
-```
-
-### 2. Install Dependencies
-```bash
 npm install
 ```
 
-### 3. Setup Environment Variables
-Buat file `.env` di root project:
+**2. Buat file `.env`**
 ```env
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-> Dapatkan credentials dari [Supabase Dashboard](https://supabase.com/dashboard) → Project Settings → API
+Credentials bisa didapat dari [Supabase Dashboard](https://supabase.com/dashboard) → Project Settings → API.
 
-### 4. Setup Database
-Jalankan migration Supabase:
+**3. Setup database**
+
+Import file SQL dari folder `supabase/migrations/` melalui Supabase Dashboard, atau jalankan:
 ```bash
-# Jika menggunakan Supabase CLI
 supabase db push
 ```
-Atau import file SQL dari folder `supabase/migrations/` melalui Supabase Dashboard.
 
-### 5. Jalankan Development Server
+**4. Jalankan**
 ```bash
 npm run dev
 ```
-Buka [http://localhost:5173](http://localhost:5173) di browser.
 
-### 6. Build untuk Production
-```bash
-npm run build
-npm run preview
-```
+Buka `http://localhost:5173`.
 
 ---
 
-## 📁 Struktur Project
+## Struktur Folder
 
 ```
 mindbloom/
 ├── public/
-│   ├── audio/              # File audio untuk musik relaksasi
-│   ├── logo-terang.svg     # Logo mode terang
-│   └── logo-malam.svg      # Logo mode gelap
+│   ├── audio/              # File audio musik relaksasi
+│   ├── logo-terang.svg
+│   └── logo-malam.svg
 ├── src/
-│   ├── components/         # Komponen reusable
-│   │   ├── intervention/   # Komponen MusicPlayer, VideoPlayer, JournalPrompt
-│   │   └── ...
-│   ├── contexts/           # React Context (Auth, Theme)
-│   ├── data/               # Bank soal skrining (questions.ts)
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utilities & Supabase client
-│   ├── pages/              # Halaman utama aplikasi
-│   │   ├── LandingPage.tsx
-│   │   ├── DashboardPage.tsx
-│   │   ├── ScreeningPage.tsx
-│   │   ├── ResultPage.tsx
-│   │   ├── InterventionPage.tsx
-│   │   ├── MoodCalendarPage.tsx
-│   │   ├── ReferralPage.tsx
-│   │   ├── EmergencyPage.tsx
-│   │   └── ...
-│   └── types/              # TypeScript type definitions
-├── supabase/
-│   └── migrations/         # Database schema
-└── ...
+│   ├── components/
+│   │   └── intervention/   # MusicPlayer, VideoPlayer, JournalPrompt
+│   ├── contexts/           # AuthContext, ThemeContext
+│   ├── data/               # Bank soal skrining
+│   ├── hooks/
+│   ├── lib/                # Supabase client & utilities
+│   ├── pages/              # Semua halaman aplikasi
+│   └── types/
+└── supabase/
+    └── migrations/         # Schema database
 ```
 
 ---
 
-## 🔄 Alur Pengguna
+## Alur Pengguna
 
 ```
-Landing Page
-    ↓
-Register / Login
-    ↓
-Dashboard (Overview kondisi & streak)
-    ↓
-Skrining (PHQ-9 + PSS)
-    ↓
-Analisis Fuzzy Tahani → Skor + Kategori
-    ↓
-Program Intervensi 3 Tahap
-    ├── 🎵 Musik Relaksasi
-    ├── 🧘 Meditasi Terpandu
-    └── 📓 Jurnal Refleksi
-    ↓
-Evaluasi Ulang & Tracking (Kalender Mood)
-    ↓
-Rekomendasi Psikolog (jika diperlukan)
+Landing Page → Register / Login → Dashboard
+→ Skrining (PHQ-9 + PSS)
+→ Hasil Analisis Fuzzy Tahani
+→ Intervensi (Musik → Meditasi → Jurnal)
+→ Kalender Mood & Riwayat
+→ Rekomendasi Psikolog (jika perlu)
 ```
 
 ---
 
-## 🤖 Fuzzy Tahani — Kenapa Bukan AI Biasa?
+## Kenapa Fuzzy Tahani?
 
-| Aspek | Machine Learning | Fuzzy Tahani |
-|-------|-----------------|--------------|
-| Kebutuhan data | Ribuan data training | Tidak perlu |
-| Transparansi | Black box | Explainable |
-| Kesehatan mental | Sulit tangani spektrum | Dirancang untuk area abu-abu |
-| Implementasi | Kompleks | Ringan & efisien |
+Kesehatan mental tidak bisa diukur hitam-putih. Seseorang bisa saja "agak stres tapi belum sampai depresi"   dan sistem harus bisa memahami nuansa itu.
 
-Fuzzy Tahani memungkinkan sistem memahami bahwa kesehatan mental **bukan hitam-putih** — seseorang bisa berada di spektrum "cukup stres tapi belum depresi", dan sistem akan merespons secara proporsional.
+Berbeda dengan machine learning yang butuh ribuan data training dan hasilnya sulit dijelaskan, Fuzzy Tahani bekerja dengan aturan linguistik yang transparan dan cocok untuk input kuesioner terstruktur. Hasilnya bisa dijelaskan secara logis, bukan sekadar angka dari black box.
 
 ---
 
-## 🌍 SDGs yang Didukung
+## SDGs
 
-**Goal 3: Good Health and Well-Being** — Memastikan kehidupan yang sehat dan mendukung kesejahteraan semua orang di segala usia, dengan fokus pada aksesibilitas layanan kesehatan mental.
+Mendukung **SDG Goal 3   Good Health and Well-Being**: meningkatkan akses terhadap layanan kesehatan mental, khususnya untuk remaja dan usia produktif di Indonesia.
 
 ---
 
-## 👥 Tim Pengembang
+## Tim
 
 | Nama | Peran |
 |------|-------|
-| **Dimas Panca Pamungka** | Fullstack Developer |
-| **Raihana** | Peneliti & Penyaji |
-| **Wakhida** | Analis & Penyaji |
-
----
-
-## 📄 Lisensi
-
-Project ini dibuat untuk keperluan kompetisi hackathon. Seluruh data dan konten kesehatan mental mengacu pada standar klinis yang tervalidasi (PHQ-9, PSS, WHO).
+| Dimas Panca Pamungka | Fullstack Developer |
+| Raihana | Peneliti & Presenter |
+| Wakhida | Analis & Presenter |
 
 ---
 
 <div align="center">
 
-**MindBloom** — *Bukan pengganti psikolog, tapi pintu pertama menuju kesehatan mental yang lebih baik.*
-
-*"Menjaga kesehatan mental bukan tanda kelemahan — tetapi bentuk keberanian."*
+*"Menjaga kesehatan mental bukan tanda kelemahan   tapi bentuk keberanian."*
 
 </div>
