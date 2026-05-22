@@ -66,7 +66,7 @@ const TRACKS: TrackDef[] = [
   },
 ]
 
-const MIN_LISTEN_SECS = 60
+const MIN_LISTEN_SECS = 15
 
 function pickRandom(files: string[]): string {
   return files[Math.floor(Math.random() * files.length)]

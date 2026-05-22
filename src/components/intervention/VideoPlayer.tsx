@@ -23,7 +23,7 @@ const TABS: VideoTab[] = [
   {
     label:   'Pemindaian Tubuh',
     Icon:    ScanLine,
-    embedId: 'VB9JJBhPNPc',
+    embedId: '_DTmGtznab4',
     tip:     'Pindai tubuhmu dari ujung kepala hingga kaki, lepaskan ketegangan.',
   },
   {
